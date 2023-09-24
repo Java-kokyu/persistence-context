@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class PersistenceContextApplicationTests {
 
     @Test
-    void contextLoads() {
+    void cancel() {
     }
 
 }

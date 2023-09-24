@@ -1,5 +1,7 @@
 package com.example.persistencecontext.entity;
 
+import com.example.persistencecontext.entity.enums.ItemStatus;
+import com.example.persistencecontext.entity.enums.converter.ItemStatusConverter;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -14,6 +16,10 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Convert(converter = ItemStatusConverter.class)
+    @Column(name = "e_status")
+    private ItemStatus itemStatus;
 
     private String name;
 

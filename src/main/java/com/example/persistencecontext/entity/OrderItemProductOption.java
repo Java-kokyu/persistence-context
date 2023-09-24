@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Table(name = "market__product_option")
-public class ProductOption {
+@Table(name = "order__order_item_product_option")
+public class OrderItemProductOption{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,8 +24,4 @@ public class ProductOption {
     private String name;
 
     private Double price;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JsonManagedReference(value = "product_pk")
-    private Product product;
 }

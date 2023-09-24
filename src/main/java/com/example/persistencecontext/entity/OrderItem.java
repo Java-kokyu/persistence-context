@@ -1,5 +1,7 @@
 package com.example.persistencecontext.entity;
 
+import com.example.persistencecontext.entity.enums.OrderStatus;
+import com.example.persistencecontext.entity.enums.converter.OrderStatusConverter;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -15,6 +17,10 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Convert(converter = OrderStatusConverter.class)
+    @Column(name = "e_status")
+    private OrderStatus orderStatus;
 
     private Integer count;
 

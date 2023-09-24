@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Table(name = "order__order_item_gift_card")
-public class OrderItemGiftCard extends OrderItem{
+@Table(name = "daily_food__daily_food")
+public class DailyFood extends Item{
 }
